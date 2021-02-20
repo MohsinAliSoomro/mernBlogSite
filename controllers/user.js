@@ -67,7 +67,9 @@ exports.user = {
 				res.json({
 					email: passwordHash.email,
 					displayName: passwordHash.displayName,
-					accessToken: access_token
+					accessToken: access_token,
+					avatar: passwordHash.avatar,
+					id:passwordHash._id
 				});
 			} else {
 				res.json({message:"Please check your email or password and try again"})
