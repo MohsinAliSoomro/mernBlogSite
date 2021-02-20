@@ -14,8 +14,7 @@ var _require3 = require('../multer/multer'),
 router.post('/signup', upload.single('avatar'), user.createUser);
 router.get('/user', user.listUser);
 router.post('/login', user.loginUser);
-router.get('/user/:id', user.findUser);
-router.post('/update/:id', upload.single('avatar'), user.updateUser);
-router["delete"]('/delete/:id', user.deleteUser); // router.post('/password/:id', auth.authenticateToken, user.passwordChangeUser);
-
+router.get('/user/:id', auth.authenticateToken, user.findUser);
+router.post('/update/:id', auth.authenticateToken, upload.single('avatar'), user.updateUser);
+router["delete"]('/delete/:id', auth.authenticateToken, user.deleteUser);
 module.exports = router;

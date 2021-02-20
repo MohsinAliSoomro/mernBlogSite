@@ -67,7 +67,9 @@ exports.post = {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return regeneratorRuntime.awrap(_Post.find().populate("user", "_id displayName"));
+            return regeneratorRuntime.awrap(_Post.find({}).sort({
+              _id: -1
+            }));
 
           case 2:
             post = _context2.sent;

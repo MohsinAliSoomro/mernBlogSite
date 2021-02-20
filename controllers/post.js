@@ -21,7 +21,7 @@ exports.post = {
 		}
 	},
 	listPost: async (req, res) => {
-		const post = await Post.find().populate("user","_id displayName");
+		const post = await Post.find({}).sort({_id:-1});
 		if (post) {
 			res.send(post);
 		} else {
